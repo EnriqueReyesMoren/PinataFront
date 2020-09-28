@@ -23,7 +23,9 @@ import {
   BecomeBusiness,
   Index2, 
   Login,
-  SingUp
+  SingUp,
+  BecomeCreador,
+  AssetsPage
 } from "./pages/"
 
 //==============================Pantalles usuario 
@@ -72,10 +74,12 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Welcome} />
-      <Route exact path="/assets" component={BecomeBusiness} />
+      <Route exact path="/negocio" component={BecomeBusiness} />
       <Route exact path="/business" component={Index2} />
       <Route exact path="/signup" component={SingUp} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/creador" component={BecomeCreador} />
+      <Route exact path="/assets" component={AssetsPage} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

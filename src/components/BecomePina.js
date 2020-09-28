@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../lotties/21303-pineapple';
+import animationData from '../lotties/29914-flys-and-a-lemon';
 import { Link } from "react-router-dom"
 
 const BecomeBusiness = () => {
@@ -24,8 +24,8 @@ const BecomeBusiness = () => {
         height={400}
         width={400}
       />
-                        <Link to="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></Link>
-                        <Link to="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></Link>
+                        <Link to="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Registrate con <b>Google</b></Link>
+                        <Link to="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Registrate con <b>Facebook</b></Link>
 
                         </div>
                     </div>
@@ -33,7 +33,7 @@ const BecomeBusiness = () => {
                         <div className="become-teacher__form">
                             <div className="become-teacher__form-top">
                                 <h2 className="become-teacher__form-title">
-                                    Inicia sesión
+                                    Registrate hoy
                                 </h2>
                             </div>
                             <form action="#"

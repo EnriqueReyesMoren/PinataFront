@@ -3,17 +3,19 @@ import Layout from "../components/Layout";
 import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import Contact from "../components/Contact";
+import BecomePina from "../components/BecomePina";
 
-const SignUpPage = () => {
+
+
+const Login = () => {
     return (
-        <Layout pageTitle="Kipso | Contact">
+        <Layout pageTitle="Registrate | Conviertete en miembro">
             <NavThree />
-            <PageHeader title="Contact" />
-            <Contact />
+            <PageHeader title="Registrato" />
+            <BecomePina />
             <Footer />
         </Layout>
     );
 };
 
-export default SignUpPage;
+export default Login;

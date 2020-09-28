@@ -1,39 +1,30 @@
 import React from 'react';
-import Lottie from 'react-lottie';
-import animationData from '../lotties/21303-pineapple';
+
 import { Link } from "react-router-dom"
 
-const BecomeBusiness = () => {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice"
-        }
-      };
-
+const BecomeBusiness2 = () => {
+   
     return (
         <section className="become-teacher">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6">
-                        <div className="become-teacher__content">
-                        <Lottie 
-	    options={defaultOptions}
-        height={400}
-        width={400}
-      />
-                        <Link to="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></Link>
-                        <Link to="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></Link>
-
+                <div className="col-lg-6">
+                    <div className="become-teacher__content">
+                            <h2 className="become-teacher__title">Lanza promociones a cambio de contenido </h2>
+                            <p className="become-teacher__text">Conecta con gente creativa y lanza propuestas de colaboración a cambio 
+                            de dinero, reconocimiento o articulos de tu negocio.</p>
+                            <h2 className="become-teacher__subtitle">Aplica a generar contenido totalmente personalizado</h2>
+                            <p className="become-teacher__text">Puedes ofertar trabajos de publcidad y contenido a cambio de contratos monetarios,
+                            consumo temporal en tu negocio o reconocimiento en tus redes con nuestros creativos.</p>
+                
                         </div>
-                    </div>
+                    
+                        </div>
                     <div className="col-lg-6">
                         <div className="become-teacher__form">
                             <div className="become-teacher__form-top">
                                 <h2 className="become-teacher__form-title">
-                                    Inicia sesión
+                                    Conviertete en Negocio 
                                 </h2>
                             </div>
                             <form action="#"
@@ -55,4 +46,4 @@ const BecomeBusiness = () => {
     );
 };
 
-export default BecomeBusiness;
+export default BecomeBusiness2;

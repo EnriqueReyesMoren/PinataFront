@@ -3,17 +3,17 @@ import Layout from "../components/Layout";
 import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import Courses from "../components/Courses";
+import Assets from "../components/Assets";
 
-const CoursesPage = () => {
+const AssetsPage = () => {
     return (
-        <Layout pageTitle="Kipso | Courses">
+        <Layout pageTitle="Contenido | Descubre">
             <NavThree />
-            <PageHeader title="Courses" />
-            <Courses />
+            <PageHeader title="Contenido" />
+            <Assets />
             <Footer />
         </Layout>
     );
 };
 
-export default CoursesPage;
+export default AssetsPage;

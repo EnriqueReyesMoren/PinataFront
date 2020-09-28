@@ -4,12 +4,12 @@ import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import BecomeBusiness from "../components/BecomeBusiness";
-import TeamOne from "../components/TeamOne";
+
 
 
 const Login = () => {
     return (
-        <Layout pageTitle="Kipso | Become Teacher">
+        <Layout pageTitle="Login | Inicia sesión">
             <NavThree />
             <PageHeader title="Inicia sesión" />
             <BecomeBusiness />

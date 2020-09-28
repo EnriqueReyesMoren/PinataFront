@@ -3,20 +3,19 @@ import Layout from "../components/Layout";
 import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import BecomeTeacher from "../components/BecomeTeacher";
-import TeamOne from "../components/TeamOne";
+import BecomeCreative from "../components/BecomeCreative";
 
 
-const GalleryPage = () => {
+
+const BecomeCreador = () => {
     return (
-        <Layout pageTitle="Kipso | Become Teacher">
+        <Layout pageTitle="Creadores | Gana dinero publicando">
             <NavThree />
-            <PageHeader title="Become Teacher" />
-            <BecomeTeacher />
-            <TeamOne />
+            <PageHeader title="Creadores" />
+            <BecomeCreative />
             <Footer />
         </Layout>
     );
 };
 
-export default GalleryPage;
+export default BecomeCreador;

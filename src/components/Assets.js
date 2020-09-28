@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 
-const Courses = () => {
+const Assets = () => {
     return (
         <section className="course-one course-page">
             <div className="container">
@@ -229,4 +229,4 @@ const Courses = () => {
     );
 };
 
-export default Courses;
+export default Assets;
