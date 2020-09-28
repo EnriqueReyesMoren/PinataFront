@@ -4,7 +4,7 @@ import 'swiper/swiper-bundle.css';
 /* import 'swiper/swiper-bundle.css'; */
 import { Link } from "react-router-dom"
 
-const BlogTwo = () => {
+const PromosTwo = () => {
 
     const params = {
         slidesPerView : 3,
@@ -42,8 +42,8 @@ const BlogTwo = () => {
         <section className="blog-two">
             <div className="container">
                 <div className="block-title text-center">
-                    <h2 className="block-title__title">Our latest news <br />
-                        & articles</h2>
+                    <h2 className="block-title__title">Estos negocios necesitan <br />
+                        buen contenido</h2>
                 </div>
                 <div className="blog-two__carousel">
                     <Swiper {...params}>
@@ -206,4 +206,4 @@ const BlogTwo = () => {
         </section>
     );
 };
-export default BlogTwo;
+export default PromosTwo;

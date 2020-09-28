@@ -376,7 +376,7 @@ const CourseDetails = () => {
                                     <img src="/assets/images/lc-1-1.jpg" alt="" />
                                 </div>
                                 <div className="course-details__list-content">
-                                    <a className="course-details__list-author" href="#">by <span>Lydia Byrd</span></Link>
+                                    <Link className="course-details__list-author" to="#">by <span>Lydia Byrd</span></Link>
                                     <h3><Link to="#">Marketing strategies</Link></h3>
                                     <div className="course-details__list-stars">
                                         <i className="fas fa-star"></i>
@@ -393,7 +393,7 @@ const CourseDetails = () => {
                                     <img src="/assets/images/lc-1-2.jpg" alt="" />
                                 </div>
                                 <div className="course-details__list-content">
-                                    <a className="course-details__list-author" href="#">by <span>Lydia Byrd</span></Link>
+                                    <Link className="course-details__list-author" to="#">by <span>Lydia Byrd</span></Link>
                                     <h3><Link to="#">Marketing strategies</Link></h3>
                                     <div className="course-details__list-stars">
                                         <i className="fas fa-star"></i>
@@ -410,7 +410,7 @@ const CourseDetails = () => {
                                     <img src="/assets/images/lc-1-3.jpg" alt="" />
                                 </div>
                                 <div className="course-details__list-content">
-                                    <a className="course-details__list-author" href="#">by <span>Lydia Byrd</span></Link>
+                                    <Link className="course-details__list-author" to="#">by <span>Lydia Byrd</span></Link>
                                     <h3><Link to="#">Marketing strategies</Link></h3>
                                     <div className="course-details__list-stars">
                                         <i className="fas fa-star"></i>

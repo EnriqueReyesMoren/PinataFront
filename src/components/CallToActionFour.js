@@ -7,14 +7,12 @@ const CallToActionFour = () => {
             <img src="assets/images/line-stripe-1.png" className="cta-four__line" alt="" />
             <div className="container text-center">
                 <div className="block-title">
-                    <h2 className="block-title__title">We’ve best teachers <br />
-                        in every subject</h2>
+                    <h2 className="block-title__title">Publica tu contenido  <br />
+                        y comparte valor </h2>
                 </div>
-                <p className="cta-four__text">Lorem ipsum gravida nibh vel velit auctor aliquetnean
-                    sollicitudin, lorem quis
-                    bibendum auci elit <br /> consequat is simply free text available in the psutis sem nibh id
-                        eis sed odio sit
-                        amet.
+                <p className="cta-four__text">Nosotros te pagamos por cada recurso vendido sin ataduras 
+                ni compromisos <br />.
+                Comienza a ganar dinero explotando tus habilidades creativas
                 </p>
             </div>
         </section>

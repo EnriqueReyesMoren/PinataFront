@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
 import {
 /*   About,
@@ -20,7 +19,11 @@ import {
   PromoDetail,
   Promos,
   SignUp, */
-  Welcome
+  Welcome,
+  BecomeBusiness,
+  Index2, 
+  Login,
+  SingUp
 } from "./pages/"
 
 //==============================Pantalles usuario 
@@ -61,8 +64,7 @@ const VerOrdenes= () => <h1>VerOrdenes</h1>
 //======================================Pantallas Generales 
 
 
-const SingUp= () => <h1>SingUp</h1>
-const LogIn= () => <h1>LogIn</h1>
+
 
 
 
@@ -70,7 +72,10 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Welcome} />
-      <Route exact path="/assets" component={VistaDetalleProducto} />
+      <Route exact path="/assets" component={BecomeBusiness} />
+      <Route exact path="/business" component={Index2} />
+      <Route exact path="/signup" component={SingUp} />
+      <Route exact path="/login" component={Login} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

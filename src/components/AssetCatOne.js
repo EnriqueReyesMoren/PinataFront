@@ -3,7 +3,7 @@ import Swiper from 'react-id-swiper';
 import { Link } from "react-router-dom"
 import 'swiper/swiper-bundle.css';
 
-const CourseCatOne = () => {
+const AssetCatOne = () => {
 
     const params = {
         slidesPerView : 6,
@@ -37,97 +37,89 @@ const CourseCatOne = () => {
         <section className="thm-gray-bg course-category-one">
             <div className="container-fluid text-center">
                 <div className="block-title text-center">
-                    <h2 className="block-title__title">Browse online <br />
-                        course categories</h2>
+                    <h2 className="block-title__title">Descubre algunas <br />
+                        categorias</h2>
                 </div>
                 <div className="course-category-one__carousel">
                     <Swiper {...params}>
                         <div className="item">
                             <div className="course-category-one__single color-1">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-desktop"></i>
+                                    <i className="fas fa-utensils"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">IT & Software</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Alimentos</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-2">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-web-programming"></i>
+                                <i class="fas fa-mountain"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Development</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Naturaleza</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-3">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-music-player"></i>
+                                <i class="fas fa-glass-cheers"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Music</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Diversión</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-4">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-camera"></i>
+                                <i class="fas fa-hiking"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Photography</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Aire libre</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-5">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-targeting"></i>
+                                <i class="fas fa-grin-hearts"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Marketing</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Parejas</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-6">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-health"></i>
+                                <i class="fas fa-book-reader"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Health & Fitness</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Educación</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-1">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-desktop"></i>
+                                <i class="fas fa-palette"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">IT & Software</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Arte y musica</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-2">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-web-programming"></i>
+                                <i class="fas fa-shopping-basket"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Development</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Compras</Link></h3>
                             </div>
                         </div>
                         <div className="item">
                             <div className="course-category-one__single color-3">
                                 <div className="course-category-one__icon">
-                                    <i className="kipso-icon-music-player"></i>
+                                <i class="fas fa-landmark"></i>
                                 </div>
-                                <h3 className="course-category-one__title"><Link to="#">Music</Link></h3>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="course-category-one__single color-4">
-                                <div className="course-category-one__icon">
-                                    <i className="kipso-icon-camera"></i>
-                                </div>
-                                <h3 className="course-category-one__title"><Link to="#">Photography</Link></h3>
+                                <h3 className="course-category-one__title"><Link to="#">Corporativas</Link></h3>
                             </div>
                         </div>
                     </Swiper>
                 </div>
 
-                <Link to="#" className="thm-btn">View All Categories</Link>
+                <Link to="#" className="thm-btn">Descubre nuestro contenido</Link>
             </div>
         </section>
     );
 }
-export default CourseCatOne;
+export default AssetCatOne;

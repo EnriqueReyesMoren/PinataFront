@@ -22,17 +22,9 @@ export default class VideoTwo extends Component {
                         <div className="row">
                             <div className="col-lg-7">
                                 <div className="video-two__content">
-                                    <h2 className="video-two__title">Kipso one & only <br />
-                                        mission is to extend <br />
-                                        your knowledge base</h2>
-                                    <Link to="#" className="thm-btn">Learn More</Link>
-                                </div>
-                            </div>
-                            <div className="col-lg-5 d-flex justify-content-lg-end justify-content-sm-start">
-                                <div className="my-auto">
-                                    <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='aitb---aDYM' onClose={() => this.setState({isOpen: false})} />
-                                    <div onClick={this.openModal} className="video-two__popup"><i className="fa fa-play"></i>
-                                    </div>
+                                    <h2 className="video-two__title">Queremos conectar a <br />
+                                        creativos talentosos  <br />
+                                        con negocios asombrosos</h2>
                                 </div>
                             </div>
                         </div>

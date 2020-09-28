@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom"
-const CourseCatThree = () => {
+const AssetCatThree = () => {
     return (
         <section className="course-category-three">
             <img src="/assets/images/circle-stripe.png" className="course-category-three__circle" alt="" />
@@ -55,4 +55,4 @@ const CourseCatThree = () => {
     );
 };
 
-export default CourseCatThree;
+export default AssetCatThree;

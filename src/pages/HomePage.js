@@ -5,34 +5,28 @@ import NavThree from "../components/NavThree";
 import SliderOne from "../components/SliderOne";
 import Footer from "../components/Footer";
 import AboutTwo from "../components/AboutTwo";
-import CourseOne from "../components/CourseOne";
+import ContenidoOne from "../components/ContenidoOne";
 import VideoTwo from "../components/VideoTwo";
-import CountdownKipso from "../components/CountdownKipso";
-import CourseCatOne from "../components/CourseCatOne";
-import CallToActionThree from "../components/CallToActionThree";
-import BrandsTwo from "../components/BrandsTwo";
-import BlogTwo from "../components/BlogTwo";
+import CountdownPina from "../components/CountdownPina";
+import AssetCatOne from "../components/AssetCatOne";
+import PromosTwo from "../components/PromosTwo";
 import CallToActionFour from "../components/CallToActionFour";
-import SubscribeOne from "../components/SubscribeOne";
+
 
 
 
 const HomePage = () => (
 
-    <Layout pageTitle="Kipso - React Next Online Education Learning & LMS Template">
-      <Topbar />
+    <Layout pageTitle="Pinata - Manten fresca tu marca con contenido parecido a">
       <NavThree />
       <SliderOne />
       <AboutTwo />
-      <CourseOne />
+      <ContenidoOne />
       <VideoTwo />
-      <CountdownKipso />
-      <CourseCatOne />
-      <CallToActionThree />
-      <BrandsTwo />
-      <BlogTwo />
+      <CountdownPina />
+      <AssetCatOne />
+      <PromosTwo />
       <CallToActionFour />
-      <SubscribeOne />
       <Footer />
     </Layout>
 

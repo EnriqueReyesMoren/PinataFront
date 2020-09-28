@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavOne from "../components/NavOne";
+import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import Teachers from "../components/Teachers";
 import CallToActionTwo from "../components/CallToActionTwo";
 
-const TeachersPage = () => {
+const BusinessPage = () => {
     return (
         <Layout pageTitle="Kipso | Teachers">
-            <NavOne />
+            <NavThree />
             <PageHeader title="Teachers" />
             <Teachers />
             <CallToActionTwo />
@@ -18,4 +18,4 @@ const TeachersPage = () => {
     );
 };
 
-export default TeachersPage;
+export default BusinessPage;

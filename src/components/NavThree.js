@@ -48,8 +48,8 @@ class NavThree extends Component {
                 <div className="topbar-one">
                     <div className="container">
                         <div className="topbar-one__left">
-                            <Link to="#">needhelp@kipso.com</Link>
-                            <Link to="#">444 888 0000</Link>
+                            <Link to="#">Soy creativo</Link>
+                            <Link to="#">Soy negocio</Link>
                         </div>
                         <div className="topbar-one__right">
                             <Link to="#">Login</Link>
@@ -72,31 +72,25 @@ class NavThree extends Component {
                         <div className="main-navigation">
                             <ul className=" navigation-box">
                                 <li className="current">
-                                    <Link href="/">Home</Link>
-                                    <ul className="sub-menu">
-                                        <li><Link to="/">Home 01</Link></li>
-                                        <li><Link to="/index-2">Home 02</Link></li>
-                                        <li><Link to="/index-3">Home 03</Link></li>
-                                        <li><Link to="#">Header Versions</Link>
-                                            <ul className="sub-menu">
-                                                <li><Link to="/">Header 01</Link></li>
-                                                <li><Link to="/index-2">Header 02</Link></li>
-                                                <li><Link to="/index-3">Header 03</Link></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <Link href="/">Inicio</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">Contact</Link>
+                                    <Link to="/contact">Contenido</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Mis colecciones</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Descargas</Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="right-side-box">
                             <div className="header__social">
-                                <Link to="#"><i className="fab fa-twitter"></i></Link>
-                                <Link to="#"><i className="fab fa-facebook-square"></i></Link>
-                                <Link to="#"><i className="fab fa-pinterest-p"></i></Link>
-                                <Link to="#"><i className="fab fa-instagram"></i></Link>
+                                <Link to="#"><i className="fas fa-camera"></i></Link>
+                                <Link to="#"><i className="fas fa-video"></i></Link>
+                                <Link to="#"><i className="fas fa-file-audio"></i></Link>
+                                <Link to="#"><i className="fas fa-bezier-curve"></i></Link>
                             </div>
                         </div>
                     </div>

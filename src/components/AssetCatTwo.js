@@ -1,9 +1,9 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.css';
+import 'swiper/swiper-bundle.css';
 import { Link } from "react-router-dom"
 
-const CourseCatTwo = () => {
+const AssetCatTwo = () => {
 
     const params = {
         slidesPerView : 5,
@@ -167,4 +167,4 @@ const CourseCatTwo = () => {
     );
 };
 
-export default CourseCatTwo;
+export default AssetCatTwo;

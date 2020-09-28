@@ -7,12 +7,13 @@ class Topbar extends Component {
             <div className="topbar-one">
                 <div className="container">
                     <div className="topbar-one__left">
-                        <Link to='/test'>needhelp@kipso.com</Link>
-                        <Link to='/test'>444 888 0000</Link>
+                        <Link to='/test'> Soy Creativo</Link>
+                        <Link to='/test'>Soy Negocio</Link>
                     </div>
                     <div className="topbar-one__right">
                         <Link to='/test'>Login</Link>
-                        <Link to='/test'>Register</Link>
+                        <Link to='/test'>Registro</Link>
+                        
                     </div>
                 </div>
             </div>
