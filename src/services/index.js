@@ -1,25 +1,32 @@
-import axios from 'axios';
-let baseURL;
+import axios from "axios"
+let baseURL
 
-process.env.NODE_ENV === 'production'
-  ? (baseURL = 'here should be your production endpoint')
-  : (baseURL = 'http://localhost:3000');
+process.env.NODE_ENV === "production"
+  ? (baseURL = "/")
+  : (baseURL = "http://localhost:3000/")
 
-const service = axios.create({ withCredentials: true, baseURL });
+const service = axios.create({ withCredentials: true, baseURL })
 
-const MY_SERVICE = {
-  test: async () => {
-    return await service.get('/');
-  },
-  signup: async (user) => {
-    return await SERVICE.post('/signup', user);
-  },
-  login: async (user) => {
-    return await SERVICE.post('/login', user);
-  },
-  logOut: async () => {
-    return await SERVICE.get('/logout');
-  }
-};
+export const test = async () => {
+  return await service.get("/")
+}
 
-export default MY_SERVICE;
+export const signup = async user => {
+  return await service.post("/signup", user)
+}
+export const login = async user => {
+  return await service.post("/login", user)
+}
+export const logOut = async () => {
+  return await service.get("/logout")
+}
+export const getProfile = async () => {
+  return await service.get("/profile")
+}
+export const facebookLogin = async () => {
+  return await service.get("/auth/facebook")
+}
+
+export const googleLogin = async () => {
+  return await service.get("/auth/google")
+}

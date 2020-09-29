@@ -3,19 +3,17 @@ import Layout from "../components/Layout";
 import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import BecomePina from "../components/BecomePina";
+import Assets from "../components/Assets";
 
-
-
-const SignUp = () => {
+const Colections = () => {
     return (
-        <Layout pageTitle="Registrate | Conviertete en miembro">
+        <Layout pageTitle="Colecciones | Verifica tu contenido">
             <NavThree />
-            <PageHeader title="Registrate" />
-            <BecomePina />
+            <PageHeader title="Colecciones" />
+            <Assets />
             <Footer />
         </Layout>
     );
 };
 
-export default SignUp;
+export default Colections;

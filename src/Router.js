@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NotFound from './components/404/NotFound.js';
+import Provider from "./context"
 import {
 /*   About,
   AssetDetails,
@@ -25,7 +26,9 @@ import {
   Login,
   SingUp,
   BecomeCreador,
-  AssetsPage
+  AssetsPage,
+  Colections,
+  AssetPublicar
 } from "./pages/"
 
 //==============================Pantalles usuario 
@@ -71,6 +74,7 @@ const VerOrdenes= () => <h1>VerOrdenes</h1>
 
 
 const Router = () => (
+  <Provider>
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Welcome} />
@@ -80,9 +84,12 @@ const Router = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/creador" component={BecomeCreador} />
       <Route exact path="/assets" component={AssetsPage} />
+      <Route exact path="/colections" component={Colections} />
+      <Route exact path="/publicar/asset" component={AssetPublicar} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
+  </Provider>
 );
 
 export default Router;

@@ -3,17 +3,17 @@ import Layout from "../components/Layout";
 import NavThree from "../components/NavThree";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import Faq from "../components/Faq";
+import PublicarAsset from "../components/PublicarAsset";
 
-const FaqPage = () => {
+const AssetPublicar = () => {
     return (
         <Layout pageTitle="Kipso | FAQ">
             <NavThree />
             <PageHeader title="FAQ" />
-            <Faq />
+            <PublicarAsset />
             <Footer />
         </Layout>
     );
 };
 
-export default FaqPage;
+export default AssetPublicar;
