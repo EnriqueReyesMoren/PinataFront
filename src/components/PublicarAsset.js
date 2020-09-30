@@ -1,5 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, Input, InputNumber, Button, Upload, Row, Col } from 'antd';
+import { Link, withRouter } from "react-router-dom"
+import axios from "axios"
+import { createAsset } from "../services/assets"
+
+
 
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 
@@ -27,14 +32,33 @@ const layout = {
       range: '${label} must be between ${min} and ${max}',
     },
   };
+
+  
  
 
-const PublicarAsset = () => {
+const PublicarAsset = ({history}) => {
 
-    const onFinish = values => {
-        console.log(values);
-      };
+     
+    const [form] = Form.useForm()
+    const [imageUrl, setImageUrl] = useState(null)
 
+    async function sendAsset(values) {
+      await createAsset({ ...values, photo: imageUrl })
+      history.push("/assets")
+    }
+    async function uploadPhoto({ target: { files } }) {
+      const data = new FormData()
+      data.append("file", files[0])
+      data.append("upload_preset", "Pinata-Stock")
+  
+      const {
+        data: { secure_url }
+      } = await axios.post(
+        "https://api.cloudinary.com/v1_1/hito-negro/image/upload",
+        data
+      )
+      setImageUrl(secure_url)
+    }
 
     return (
         <div>
@@ -42,9 +66,28 @@ const PublicarAsset = () => {
 
             <section className="contact-one">
                 <div className="container">
-                    <h2 className="contact-one__title text-center">Get in touch <br />
-                        with us</h2>
-                        <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+                    <h2 className="contact-one__title text-center">Publica tu <br />
+                        contenido</h2>
+
+      <Form layout='vertical' form={form} onFinish={sendAsset}>
+      <Form.Item name='name' label='Name'>
+        <Input />
+      </Form.Item>
+      <Form.Item name='description' label='Description'>
+        <Input.TextArea />
+      </Form.Item>
+      <Form.Item name='price' label='Direction'>
+        <Input />
+      </Form.Item>
+      <Form.Item name='category' label='Description'>
+        <Input />
+      </Form.Item>
+      <input type='file' onChange={uploadPhoto} />
+      <Button type='primary' htmlType='submit' disabled={!imageUrl}>
+        Publicar Contenido
+      </Button>
+    </Form>
+                       {/*  <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
       <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
@@ -80,7 +123,7 @@ const PublicarAsset = () => {
           Submit
         </Button>
       </Form.Item>
-    </Form>
+    </Form> */}
 
                     <div className="result text-center"></div>
                 </div>
@@ -89,4 +132,4 @@ const PublicarAsset = () => {
     );
 };
 
-export default PublicarAsset;
+export default withRouter( PublicarAsset);

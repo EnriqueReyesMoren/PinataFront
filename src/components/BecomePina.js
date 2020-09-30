@@ -1,4 +1,4 @@
-import React, { useContext }from 'react';
+import React, { useContext , useState }from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../lotties/29914-flys-and-a-lemon';
 import { Link, withRouter } from "react-router-dom"
@@ -10,12 +10,19 @@ import { MyContext } from "../context"
 
 const BecomeBusiness = ({ history }) => {
 
-   
+  const [error, setError] = useState(false)
+  const [errorMesagge, setErrorMesagge] = useState("")
+  
+
         const [form] = Form.useForm()
         
         async function signupProcess(values) {
-          await signup(values)
-          history.push("/login")
+          await signup(values).catch(err => {
+            console.dir(err.response.data.message)
+            notificationError(err.response.data.message)})
+            if (error) console.log("Hay un error")
+            else {history.push("/login")}
+         
       
 
         }
@@ -28,6 +35,11 @@ const BecomeBusiness = ({ history }) => {
         preserveAspectRatio: "xMidYMid slice"
         }
       };
+
+      const notificationError = (message) =>{
+        setError(true)
+        setErrorMesagge(message)
+      }
       
 
     return (
@@ -81,8 +93,10 @@ const BecomeBusiness = ({ history }) => {
           <Input.Password />
         </Form.Item>
 
+        {error && <p>{errorMesagge}</p>}
+
         <Form.Item>
-          <Button type='primary' htmlType='submit'>
+          <Button type='primary' htmlType='submit' className="thm-btn become-teacher__form-btn">
             Submit
           </Button>
         </Form.Item>

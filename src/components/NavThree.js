@@ -75,10 +75,10 @@ class NavThree extends Component {
                                     <Link href="/">Inicio</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">Contenido</Link>
+                                    <Link to="/assets">Contenido</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">Mis colecciones</Link>
+                                    <Link to="/promociones">Promociones</Link>
                                 </li>
                                 <li>
                                     <Link to="/contact">Descargas</Link>

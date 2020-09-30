@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState,useContext,useEffect} from 'react';
 import { Link } from "react-router-dom"
+import { getAssets } from "../services/assets"
+import { MyContext } from "../context"
 
 const Footer = () => {
 
-    function scrollTop() {
-        window.scrollTo(0, 0);
+
+  
+  const [assets, setAssets] = useState(null)
+  const { user } = useContext(MyContext)
+  
+  
+  useEffect(() => {
+    async function fetchAssets() {
+      const {
+        data: { assets }
+      } = await getAssets()
+      setAssets(assets.slice(0, 5))
     }
+
+    fetchAssets()
+    
+  }, [])
+
+    
         return (
             <div>
                 <footer className="site-footer">
@@ -29,19 +47,20 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div className="col-xl-3 col-lg-6 col-sm-12">
                                     <div className="footer-widget footer-widget__gallery">
                                         <h2 className="footer-widget__title">Contenido nuevo</h2>
+                                        
                                         <ul className="list-unstyled footer-widget__gallery-list">
-                                            <li><Link to="#"><img src="/assets/images/footer-1-1.png" alt="" /></Link></li>
-                                            <li><Link to="#"><img src="/assets/images/footer-1-2.png" alt="" /></Link></li>
-                                            <li><Link to="#"><img src="/assets/images/footer-1-3.png" alt="" /></Link></li>
-                                            <li><Link to="#"><img src="/assets/images/footer-1-4.png" alt="" /></Link></li>
-                                            <li><Link to="#"><img src="/assets/images/footer-1-5.png" alt="" /></Link></li>
-                                            <li><Link to="#"><img src="/assets/images/footer-1-6.png" alt="" /></Link></li>
+                                        {assets?.map(assets => (
+                                            <li><Link to={`/assets/${assets._id}`}><img src={assets.photo}  alt="" /></Link></li>
+                                            ))} 
                                         </ul>
+                                        
                                     </div>
                                 </div>
+                                 
                                 <div className="col-xl-3 col-lg-6 col-sm-12">
                                     <div className="footer-widget footer-widget__about">
                                         <h2 className="footer-widget__title">Piñata</h2>

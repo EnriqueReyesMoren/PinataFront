@@ -5,15 +5,15 @@ import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import News from "../components/News";
 
-const NewsPage = () => {
+const PromoPage = () => {
     return (
-        <Layout pageTitle="Kipso | News">
+        <Layout pageTitle="Promociones | Pinata Stock">
             <NavThree />
-            <PageHeader title="News" />
+            <PageHeader title="Promociones" />
             <News />
             <Footer />
         </Layout>
     );
 };
 
-export default NewsPage;
+export default PromoPage;

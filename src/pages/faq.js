@@ -9,7 +9,7 @@ const AssetPublicar = () => {
     return (
         <Layout pageTitle="Kipso | FAQ">
             <NavThree />
-            <PageHeader title="FAQ" />
+            <PageHeader title="Publica tu archivo" />
             <PublicarAsset />
             <Footer />
         </Layout>
