@@ -16,7 +16,7 @@ const PromosTwo = () => {
         const {
           data: { promos }
         } = await getPromos()
-        setPromos(promos.slice(0,1))
+        setPromos(promos.slice(0,5))
       }
   
       fetchPromos()
@@ -65,19 +65,19 @@ const PromosTwo = () => {
                 <div className="blog-two__carousel">
                     <Swiper {...params}>
                     {promos?.map(promociones => (
-                    <div className="item">
+                    <div className="item" style={{width:"370px", height:"243px", objectFit:"cover"}}>
                         <div className="blog-two__single" style={{backgroundImage: `url(${[promociones.photo]})`}}>
                             <div className="blog-two__inner">
                                 <div className="blog-two__meta">
                                
 
-                                <Link to={`/assets/${promociones._id}`}>Por ${promociones.price}</Link>
+                                <Link to={`/promos/${promociones._id}`}>Por ${promociones.price}</Link>
                                    
 
                                    
                                 </div>
                                 <h3 className="blog-two__title">
-                                    <Link to={`/assets/${promociones._id}`}>{promociones.name}</Link>
+                                    <Link to={`/promos/${promociones._id}`}>{promociones.name}</Link>
                                 </h3>
                             </div>
                         </div>

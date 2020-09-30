@@ -2,7 +2,7 @@ import axios from "axios"
 let baseURL
 
 process.env.NODE_ENV === "production"
-  ? (baseURL = "/promos")
+  ? (baseURL = "https://pinatastock.herokuapp.com/promos")
   : (baseURL = "http://localhost:3000/promos")
 
 const service = axios.create({ withCredentials: true, baseURL })
@@ -10,12 +10,12 @@ const service = axios.create({ withCredentials: true, baseURL })
 export const getPromos = async () => {
   return await service.get("/")
 }
-export const getOnePromo = async promoId => {
+export const getPromo = async promoId => {
   return await service.get(`/${promoId}`)
 }
 
 export const createPromo = async PromoInfo => {
-  return await service.post("/promos/new", PromoInfo)
+  return await service.post("/new", PromoInfo)
 }
 
  

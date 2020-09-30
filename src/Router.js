@@ -86,7 +86,8 @@ const Router = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/creador" component={BecomeCreador} />
       <Route exact path="/assets" component={AssetsPage} />
-      <Route exact path="/assets/:assetId" component={AssetDetails} />
+      <Route exact path="/assets/:assetId"  component={AssetDetails} />
+      <Route exact path="/promos/:promoId"  component={AssetDetails} />
       <Route exact path="/colections" component={Colections} />
       <Route exact path="/publicar/asset" component={AssetPublicar} />
       <Route exact path="/promociones" component={PromoPage} />

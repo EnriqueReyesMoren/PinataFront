@@ -27,17 +27,17 @@ const News = () => {
                         <div className="blog-one__single">
                             <div className="blog-one__image">
                                 <img src={promociones.photo }alt="" style={{width:"370px", height:"243px", objectFit:"cover"}}/>
-                                    <Link to="/news-details"className="blog-one__plus"><i
+                                    <Link to={`/promos/${promociones._id}`} className="blog-one__plus"><i
                                         className="kipso-icon-plus-symbol"></i>
                                     </Link>
                             </div>
                             <div className="blog-one__content text-center">
                                 
                                 <h2 className="blog-one__title">
-                                    <Link to="/news-details">{promociones.name}</Link>
+                                    <Link to={`/promos/${promociones._id}`}>{promociones.name}</Link>
                                 </h2>
                                 <p className="blog-one__text">{promociones.descripton}</p>
-                                <Link to="/news-details" className="blog-one__link">Leer mas</Link>
+                                <Link to={`/promos/${promociones._id}`} className="blog-one__link">Leer mas</Link>
                             </div>
                         </div>
                     </div>
