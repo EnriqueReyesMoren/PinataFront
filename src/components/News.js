@@ -26,7 +26,7 @@ const News = () => {
                     <div className="col-lg-4">
                         <div className="blog-one__single">
                             <div className="blog-one__image">
-                                <img src="/assets/images/blog-1-1.jpg" alt="" style={{width:"370px", height:"243px", objectFit:"cover"}}/>
+                                <img src={promociones.photo }alt="" style={{width:"370px", height:"243px", objectFit:"cover"}}/>
                                     <Link to="/news-details"className="blog-one__plus"><i
                                         className="kipso-icon-plus-symbol"></i>
                                     </Link>

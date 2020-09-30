@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {useState,useContext,useEffect}  from 'react';
 import Swiper from 'react-id-swiper';
 import 'swiper/swiper-bundle.css';
 /* import 'swiper/swiper-bundle.css'; */
 import { Link } from "react-router-dom"
+import {getPromos} from "../services/promos"
+import { MyContext } from "../context"
 
 const PromosTwo = () => {
+
+    const [promos, setPromos] = useState(null)
+    const { user } = useContext(MyContext)
+  
+    useEffect(() => {
+      async function fetchPromos() {
+        const {
+          data: { promos }
+        } = await getPromos()
+        setPromos(promos.slice(0,1))
+      }
+  
+      fetchPromos()
+      
+    }, [])
 
     const params = {
         slidesPerView : 3,
@@ -38,7 +55,7 @@ const PromosTwo = () => {
         }
     }
 
-    return (
+    return ( 
         <section className="blog-two">
             <div className="container">
                 <div className="block-title text-center">
@@ -47,159 +64,25 @@ const PromosTwo = () => {
                 </div>
                 <div className="blog-two__carousel">
                     <Swiper {...params}>
+                    {promos?.map(promociones => (
                     <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-1.jpg)`}}>
+                        <div className="blog-two__single" style={{backgroundImage: `url(${[promociones.photo]})`}}>
                             <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
                                 <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
+                               
+
+                                <Link to={`/assets/${promociones._id}`}>Por ${promociones.price}</Link>
+                                   
+
+                                   
                                 </div>
                                 <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Summer high school journalism camp</Link>
+                                    <Link to={`/assets/${promociones._id}`}>{promociones.name}</Link>
                                 </h3>
                             </div>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-2.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Get a tips to develop a quality education</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-3.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Learn variety of programs and courses</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-1.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Summer high school journalism camp</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-2.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Get a tips to develop a quality education</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-3.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Learn variety of programs and courses</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-1.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Summer high school journalism camp</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-2.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Get a tips to develop a quality education</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="blog-two__single" style={{backgroundImage: `url(assets/images/blog-2-3.jpg)`}}>
-                            <div className="blog-two__inner">
-                                <Link to="news-details.html" className="blog-two__date">
-                                    <span>25</span>
-                                    Jul
-                                </Link>
-                                <div className="blog-two__meta">
-                                   <Link to="/">by Admin</Link>
-                                   <Link to="/">3 Comments</Link>
-                                </div>
-                                <h3 className="blog-two__title">
-                                    <Link to="news-details.html">Learn variety of programs and courses</Link>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
+                    ))} 
                     </Swiper>
                 </div>
             </div>

@@ -48,12 +48,12 @@ class NavThree extends Component {
                 <div className="topbar-one">
                     <div className="container">
                         <div className="topbar-one__left">
-                            <Link to="#">Soy creativo</Link>
-                            <Link to="#">Soy negocio</Link>
+                            <Link to="/creador">Soy creativo</Link>
+                            <Link to="/negocio">Soy negocio</Link>
                         </div>
                         <div className="topbar-one__right">
-                            <Link to="#">Login</Link>
-                            <Link to="#">Register</Link>
+                            <Link to="/login">Login</Link>
+                            <Link to="/signup">Register</Link>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ class NavThree extends Component {
                         <div className="logo-box clearfix">
                             <Link to="/" className="navbar-brand">
                                     <img src="assets/images/logo-light.png" className="main-logo" width="128"
-                                         alt="Awesome Image" />
+                                         alt="pinata logo" />
                                 
                             </Link>
                             <button className="menu-toggler" data-target=".main-navigation">

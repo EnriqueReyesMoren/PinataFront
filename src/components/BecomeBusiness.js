@@ -1,9 +1,39 @@
-import React from 'react';
+import React , { useContext , useState } from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../lotties/21303-pineapple';
-import { Link } from "react-router-dom"
+import { Link , withRouter} from "react-router-dom"
+import { login } from "../services"
+import { Form, Input, Button } from "antd"
+import { MyContext } from "../context"
 
-const BecomeBusiness = () => {
+const BecomeBusiness = ({history}) => {
+
+    const { setCtxUser } = useContext(MyContext)
+    const [error, setError] = useState(false)
+    const [errorMesagge, setErrorMesagge] = useState("")
+  
+
+        const [form] = Form.useForm()
+        
+        async function loginProcess(values) {
+            const user  = await login(values).catch(err => {
+            console.dir(err.response.data.message)
+            notificationError(err.response.data.message)})
+            if (error) console.log("Hay un error")
+            else {history.push("/assets")}
+            delete user.password
+            delete user.hash
+            delete user.salt
+            setCtxUser(user)
+         }
+
+        
+
+         const notificationError = (message) =>{
+            setError(true)
+            setErrorMesagge(message)
+          }
+
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -36,16 +66,33 @@ const BecomeBusiness = () => {
                                     Inicia sesión
                                 </h2>
                             </div>
-                            <form action="#"
-                                  className="become-teacher__form-content contact-form-validated"
-                                  noValidate="novalidate">
-                                <input type="text" placeholder="Your Name" name="name" />
-                                <input type="text" placeholder="Email Address" name="email" />
-                                <input type="text" placeholder="Phone Number" name="phone" />
-                                <input type="text" placeholder="Comment" name="message" />
-                                <button type="submit" className="thm-btn become-teacher__form-btn">Iniciar
-                                </button>
-                            </form>
+                            <Form layout='vertical' name='basic' form={form} onFinish={loginProcess}>
+        <Form.Item
+          label='Email'
+          name='email'
+          rules={[{ required: true, message: "Please input your email!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label='Password'
+          name='password'
+          rules={[{ required: true, message: "Please input your password!" }]}
+        >
+          <Input.Password />
+        </Form.Item>
+
+        {error && <p>{errorMesagge}</p>}
+
+        <Form.Item>
+          <Button type='primary' htmlType='submit' className="thm-btn become-teacher__form-btn">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+      <br/>
+    
                             <div className="result text-center"></div>
                         </div>
                     </div>
@@ -55,4 +102,4 @@ const BecomeBusiness = () => {
     );
 };
 
-export default BecomeBusiness;
+export default withRouter(BecomeBusiness);

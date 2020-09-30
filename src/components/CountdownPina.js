@@ -1,8 +1,34 @@
-import React, {Component} from 'react';
-import Countdown from 'react-countdown';
+import React, {Component, useState} from 'react';
 
-const CountdownPina = () => {
+import { signup } from "../services"
+import {  withRouter } from "react-router-dom"
+import { Form, Input, Button } from "antd"
 
+
+const CountdownPina = ({ history }) => {
+
+    const [error, setError] = useState(false)
+    const [errorMesagge, setErrorMesagge] = useState("")
+    
+  
+          const [form] = Form.useForm()
+          
+          async function signupProcess(values) {
+            await signup(values).catch(err => {
+              console.dir(err.response.data.message)
+              notificationError(err.response.data.message)})
+              if (error) console.log("Hay un error")
+              else {history.push("/login")}
+           
+        
+  
+          }
+
+          const notificationError = (message) =>{
+            setError(true)
+            setErrorMesagge(message)
+          }
+  
     return (
         <section className="countdown-one">
             <div className="container">
@@ -24,13 +50,32 @@ const CountdownPina = () => {
                                     Registrate para empezar
                                 </h2>
                             </div>
-                            <form action="#" method="POST" className="become-teacher__form-content contact-form-validated">
-                                <input type="text" placeholder="Email Address" name="email" />
-                                <input type="text" placeholder="Password" name="password" />
-                                <button type="submit"
-                                        className="thm-btn become-teacher__form-btn">Registrate
-                                </button>
-                            </form>
+                            <Form layout='vertical' name='basic' form={form} onFinish={signupProcess}>
+                         <Form.Item
+                             label='Email'
+                             name='email'
+                             rules={[{ required: true, message: "Please input your email!" }]}
+                         >
+                          <Input />
+                          </Form.Item>
+
+                         <Form.Item
+                           label='Password'
+                           name='password'
+                           rules={[{ required: true, message: "Please input your password!" }]}
+                         >
+                           <Input.Password />
+                         </Form.Item>
+
+                         {error && <p>{errorMesagge}</p>}
+
+                        <Form.Item>
+                          <Button type='primary' htmlType='submit' className="thm-btn become-teacher__form-btn">
+                            Submit
+                          </Button>
+                         </Form.Item>
+                         </Form>
+                         <br/>
                             <div className="result text-center"></div>
                         </div>
                     </div>
@@ -39,4 +84,4 @@ const CountdownPina = () => {
         </section>
     );
 }
-export default CountdownPina;
+export default withRouter (CountdownPina);

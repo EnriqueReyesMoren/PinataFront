@@ -25,13 +25,13 @@ const Assets = ( ) => {
     <section className="course-one course-page">
     <div className="container">
         <div className="row">
-
+       
         {asset?.map(assets => (
 
-            <div className="col-lg-4">
-                <div className="course-one__single">
+            <div className="col-lg-4" style={{width:"370px", height:"650px"}}>
+                <div className="course-one__single" >
                     <div className="course-one__image">
-                        <img src={assets.photo}  alt="" />
+                        <img src={assets.photo}  alt="" style={{width:"370px", height:"243px", objectFit:"cover"}}/>
                             <i className="far fa-heart"></i>
                     </div>
                     <div className="course-one__content">
@@ -59,7 +59,7 @@ const Assets = ( ) => {
             </div>
 
              ))} 
-
+            
             
         </div>
         <div className="post-pagination">

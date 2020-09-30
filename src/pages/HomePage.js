@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import Topbar from "../components/Topbar";
 import NavThree from "../components/NavThree";
 import SliderOne from "../components/SliderOne";
 import Footer from "../components/Footer";

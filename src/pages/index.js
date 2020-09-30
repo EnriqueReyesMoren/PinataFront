@@ -23,6 +23,8 @@ export { default as  AssetsPage} from "./assets"
 export { default as  Colections} from "./colections"
 export { default as  AssetPublicar} from "./faq"
 export { default as  PromoPage} from "./promos"
+export { default as  AssetDetails } from "./asset-details"
+
 /* export { default as  Pricing} from "./pricing"
 export { default as  PromoDetail} from "./promo-details"
 export { default as  Promos} from "./promos"

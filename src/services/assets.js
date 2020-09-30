@@ -10,8 +10,8 @@ const service = axios.create({ withCredentials: true, baseURL })
 export const getAssets = async () => {
   return await service.get("/")
 }
-export const getOneAsset = async assetsId => {
-  return await service.get(`/${assetsId}`)
+export const getOneAsset = async assetId => {
+  return await service.get(`/${assetId}`)
 }
 
 export const createAsset = async AssetsInfo => {
