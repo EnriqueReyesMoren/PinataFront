@@ -3,14 +3,14 @@ import Layout from "../components/Layout";
 import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import PublicarAsset from "../components/PublicarAsset";
+import PublicarPromo from "../components/PublicarPromo";
 
 const AssetPublicar = () => {
     return (
-        <Layout pageTitle="Piñata | Publica tu contenido">
+        <Layout pageTitle="Piñata | Publica promociones">
             <NavThreeTry />
-            <PageHeader title="Publica tu archivo" />
-            <PublicarAsset />
+            <PageHeader title="Publica tu promo" />
+            <PublicarPromo />
             <Footer />
         </Layout>
     );

@@ -113,7 +113,10 @@ const NavThreeTry = () => {
                                 </li>
                                 
                                 <li>
-                                    <Link to="/contact">Tus promociones</Link>
+                                    <Link to="/promociones-activas">Tus promociones</Link>
+                                </li>
+                                <li>
+                                    <Link to="/publicar/promo">Publica una promoción</Link>
                                 </li>
                             </ul>
                             
@@ -132,7 +135,7 @@ const NavThreeTry = () => {
                                     <Link to="/promociones">Promociones</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">Descargas</Link>
+                                    <Link to="/descargas">Descargas</Link>
                                 </li>
                             </ul>
                             </>
@@ -144,10 +147,13 @@ const NavThreeTry = () => {
                                     <Link href="/">Inicio</Link>
                                 </li>
                                 <li>
-                                    <Link to="/assets">Tu Contenido</Link>
+                                    <Link to="/assets">Tu Contenido publicado</Link>
                                 </li>
                                 <li>
-                                    <Link to="/promociones">Promociones</Link>
+                                    <Link to="/promociones">Promociones activas</Link>
+                                </li>
+                                <li>
+                                    <Link to="/publicar/asset">Crear publicación</Link>
                                 </li>
                                 <li>
                                     <Link to="/contact">Contiendas</Link>
@@ -166,10 +172,18 @@ const NavThreeTry = () => {
                                 <Link to="/signup"><i className="fas fa-user-plus"></i></Link>
                         </>
                     )}
-                     {user && (
+                     {user?.role==="business" && (
                         <>
-                                <Link to="/negocio"><i className="fas fa-store"></i></Link>
-                                <Link to="/creador"><i className="fas fa-camera-retro"></i></Link>
+                        
+                                
+                                <Link to="/promociones-activas"><i className="fas fa-store"></i></Link>
+                                <a  onClick={logoutProcess} ><i className="fas fa-sign-out-alt"></i></a>
+                        </>
+                    )}
+                     {user?.role==="creator" && (
+                        <>
+                                
+                                <Link to="/assets-personales"><i className="fas fa-camera-retro"></i></Link>
                                 <a  onClick={logoutProcess} ><i className="fas fa-sign-out-alt"></i></a>
                                 
                         </>

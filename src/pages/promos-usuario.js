@@ -3,17 +3,17 @@ import Layout from "../components/Layout";
 import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
-import PublicarAsset from "../components/PublicarAsset";
+import News2 from "../components/News2";
 
-const AssetPublicar = () => {
+const PromoPage2 = () => {
     return (
-        <Layout pageTitle="Piñata | Publica tu contenido">
+        <Layout pageTitle="Promociones | Pinata Stock">
             <NavThreeTry />
-            <PageHeader title="Publica tu archivo" />
-            <PublicarAsset />
+            <PageHeader title="Tus Promociones" />
+            <News2 />
             <Footer />
         </Layout>
     );
 };
 
-export default AssetPublicar;
+export default PromoPage2;

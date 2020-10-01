@@ -43,6 +43,7 @@ const BecomeBusiness2 = ({history}) => {
     const [loginForm, setloginForm] = useState(true)
     const { setCtxUser } = useContext(MyContext)
     const [error, setError] = useState(false)
+    const [roll, setRoll] = useState(false)
     const [errorMesagge, setErrorMesagge] = useState("")
     
     async function loginProcess(values) {
@@ -70,6 +71,7 @@ const BecomeBusiness2 = ({history}) => {
         console.log(_id)
         
       await updateUserNegocio(parametro,{ ...values })
+      setRoll(true)
       history.push("/")
     }
     }
@@ -87,7 +89,9 @@ const BecomeBusiness2 = ({history}) => {
       }
     };
     
-    
+    useEffect(() => {
+      setRoll(false)
+    }, [roll])
    
     return (  user ? (
         <>
@@ -108,7 +112,7 @@ const BecomeBusiness2 = ({history}) => {
                         </div>
                     <div className="col-lg-6">
                       
-                    {!user?.role==="business" && (
+                    {user?.role!=="business" && (
                         <div className="become-teacher__form">
                             <div className="become-teacher__form-top">
                               

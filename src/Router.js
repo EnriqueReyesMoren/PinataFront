@@ -30,7 +30,10 @@ import {
   Colections,
   AssetPublicar,
   PromoPage,
-  AssetDetails
+  AssetDetails,
+  PromoPageUser,
+  PromoPublicar,
+  PromoDetails
 } from "./pages/"
 
 //==============================Pantalles usuario 
@@ -87,10 +90,12 @@ const Router = () => (
       <Route exact path="/creador" component={BecomeCreador} />
       <Route exact path="/assets" component={AssetsPage} />
       <Route exact path="/assets/:assetId"  component={AssetDetails} />
-      <Route exact path="/promos/:promoId"  component={AssetDetails} />
+      <Route exact path="/promos/:promoId"  component={PromoDetails} />
       <Route exact path="/colections" component={Colections} />
       <Route exact path="/publicar/asset" component={AssetPublicar} />
+      <Route exact path="/publicar/promo" component={PromoPublicar} />
       <Route exact path="/promociones" component={PromoPage} />
+      <Route exact path="/promociones-activas" component={PromoPageUser} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
