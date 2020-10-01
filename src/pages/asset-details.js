@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext }  from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import AssetsNuevos from "../components/AssetsNuevos";
@@ -18,12 +18,12 @@ import { AssetDetails } from '.';
   const { Title, Text } = Typography
 
 
-const CoursesPage =(prop) => {
+const AssetPage =(prop) => {
     const [asset, setAsset] = useState(null)
     const { user } = useContext(MyContext)
 
     const assetsId= prop.match.params.assetId
-   
+   console.log(assetsId)
 
     useEffect(() => {
         async function fetchAsset() {
@@ -39,7 +39,7 @@ const CoursesPage =(prop) => {
 
     return (
         <Layout pageTitle="Contenido | Detalles">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Obten esta imagen" />
             {asset ? (
      <section className="course-details">
@@ -108,5 +108,5 @@ const CoursesPage =(prop) => {
     );
 };
 
-export default CoursesPage;
+export default AssetPage;
   

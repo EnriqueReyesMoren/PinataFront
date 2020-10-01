@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
@@ -8,7 +8,7 @@ import Gallery from "../components/Gallery";
 const GalleryPage = () => {
     return (
         <Layout pageTitle="Kipso | Gallery">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Gallery" />
             <Gallery />
             <Footer />

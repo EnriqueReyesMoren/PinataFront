@@ -53,8 +53,8 @@ const BecomeBusiness = ({ history }) => {
         height={400}
         width={400}
       />
-                        <Link to="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Registrate con <b>Google</b></Link>
-                        <Link to="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Registrate con <b>Facebook</b></Link>
+                        <a href="/auth/google" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Registrate con <b>Google</b></a>
+                        <a href="/auth/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Registrate con <b>Facebook</b></a>
                         <br/>
                         </div>
                     </div>

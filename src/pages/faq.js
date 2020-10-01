@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import PublicarAsset from "../components/PublicarAsset";
@@ -8,7 +8,7 @@ import PublicarAsset from "../components/PublicarAsset";
 const AssetPublicar = () => {
     return (
         <Layout pageTitle="Kipso | FAQ">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Publica tu archivo" />
             <PublicarAsset />
             <Footer />

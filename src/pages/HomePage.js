@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import SliderOne from "../components/SliderOne";
 import Footer from "../components/Footer";
 import AboutTwo from "../components/AboutTwo";
@@ -17,7 +17,7 @@ import CallToActionFour from "../components/CallToActionFour";
 const HomePage = () => (
 
     <Layout pageTitle="Pinata - Manten fresca tu marca con contenido parecido a">
-      <NavThree />
+      <NavThreeTry />
       <SliderOne />
       <AboutTwo />
       <ContenidoOne />

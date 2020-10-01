@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext }  from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import AssetsNuevos from "../components/AssetsNuevos";
@@ -12,27 +12,25 @@ import AssetsNuevos from "../components/AssetsNuevos";
 
 
 
-const PromoDetails =(
-    {
-        match: {
-          params: { promoId }
-        }
-      }
-) => {
+function PromoDetails (
+    { match: { params: { promoId } }}
+)  {
     const [promo, setPromo] = useState(null)
     const { user } = useContext(MyContext)
-
-  
     console.log(promoId)
 
+    async function fetchPromo() {
+        const detailPromo = await getPromo (promoId)
+        setPromo(detailPromo.promos)
+        console.log(detailPromo)
+
+      }
+
+  
+    
+
+
     useEffect(() => {
-        async function fetchPromo() {
-          const {
-            data: {promos}
-          } = await getPromo(promoId)
-          setPromo(promos)
-          console.log("testing")
-        }
         fetchPromo()
         
       }, [promoId])
@@ -40,7 +38,7 @@ const PromoDetails =(
 
     return (
         <Layout pageTitle="Promo | Detalles">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Participa" />
             {promo ? (
      <section className="course-details">
@@ -91,7 +89,7 @@ const PromoDetails =(
                             <p className="course-details__price-amount">${promo.price}.00</p>
                             <Link to="" className="thm-btn course-details__price-btn">Lo quiero!</Link>
                         </div>
-                 < AssetsNuevos />
+                 
              </div>
          </div>
      </div>

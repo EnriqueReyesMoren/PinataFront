@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import BecomePina from "../components/BecomePina";
@@ -10,7 +10,7 @@ import BecomePina from "../components/BecomePina";
 const SignUp = () => {
     return (
         <Layout pageTitle="Registrate | Conviertete en miembro">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Registrate" />
             <BecomePina />
             <Footer />

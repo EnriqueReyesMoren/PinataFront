@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import BecomeBusiness2 from "../components/BecomeBusiness2";
@@ -10,7 +10,7 @@ import BecomeBusiness2 from "../components/BecomeBusiness2";
 const BecomeNegocio = () => {
     return (
         <Layout pageTitle="Negocios | Publica retos y conecta con creativos">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Negocios" />
             <BecomeBusiness2 />
             <Footer />

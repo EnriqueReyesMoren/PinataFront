@@ -70,16 +70,16 @@ const PublicarAsset = ({history}) => {
                         contenido</h2>
 
       <Form layout='vertical' form={form} onFinish={sendAsset}>
-      <Form.Item name='name' label='Name'>
+      <Form.Item name='name' label='Nombra tu imagen'>
         <Input />
       </Form.Item>
-      <Form.Item name='description' label='Description'>
+      <Form.Item name='description' label='Describe tu imagen'>
         <Input.TextArea />
       </Form.Item>
-      <Form.Item name='price' label='Direction'>
+      <Form.Item name='price' label='Asigna un precio justo'>
         <Input />
       </Form.Item>
-      <Form.Item name='category' label='Description'>
+      <Form.Item name='category' label='Asigna una categoria'>
         <Input />
       </Form.Item>
       <input type='file' onChange={uploadPhoto} />

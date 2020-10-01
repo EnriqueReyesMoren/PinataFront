@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import SliderTwo from "../components/SliderTwo";
 import Footer from "../components/Footer";
 import AssetCatTwo from "../components/AssetCatTwo";
@@ -15,7 +15,7 @@ import BlogThree from "../components/BlogThree";
 const HomePageTwo = () => {
     return (
         <Layout pageTitle="Kipso | Home 2">
-            <NavThree />
+            <NavThreeTry />
             <SliderTwo />
             <AssetCatTwo />
             <AboutOne />

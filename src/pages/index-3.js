@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import SliderOne from "../components/SliderOne";
 import CourseCatThree from "../components/CourseCatThree";
 import CallToActionOne from "../components/CallToActionOne";
@@ -17,7 +17,7 @@ import CallToActionFive from "../components/CallToActionFive";
 const HomePageThree = () => {
     return (
         <Layout pageTitle="Kipso | Home 3">
-            <NavThree />
+            <NavThreeTry />
             <SliderOne />
             <CourseCatThree />
             <CallToActionOne />

@@ -1,22 +1,35 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link } from "react-router-dom"
+import { MyContext } from "../context"
+import { logOut } from "../services"
 
 const NavThreeTry = () => {
 
     const [state,setState]= useState({sticky: true})
+    const { clearCtxUser, user } = useContext(MyContext)
 
+
+    
     const mobileMenu = () => {
         //Mobile Menu Toggle
+        if(user){
         let mainNavToggler = document.querySelector(".menu-toggler");
         let mainNav = document.querySelector(".main-navigation");
 
         mainNavToggler.addEventListener("click", function () {
-            mainNav.style.display = ( (mainNav.style.display != "block" ? "block" : "none" ) );
+        mainNav.style.display = ( (mainNav.style.display != "block" ? "block" : "none" ) );
         });
     }
+    }
+    
+    const logoutProcess = async () => {
+        await logOut()
+        clearCtxUser()
+      }
 
+     
 
-    useEffect(() => {
+     useEffect(() => {
 
         function handleScroll () {
 
@@ -36,28 +49,21 @@ const NavThreeTry = () => {
         mobileMenu();
 
         return ()=>{
-            window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScroll);
 
         }
       });
-    
-        
+ 
+      
+      
+      /* const proto = user
+      const {role, email}= proto
+      
+      console.log(role) */
 
     
         return (
             <header className="site-header site-header__home-three ">
-                <div className="topbar-one">
-                    <div className="container">
-                        <div className="topbar-one__left">
-                            <Link to="/creador">Soy creativo</Link>
-                            <Link to="/negocio">Soy negocio</Link>
-                        </div>
-                        <div className="topbar-one__right">
-                            <Link to="/login">Login</Link>
-                            <Link to="/signup">Register</Link>
-                        </div>
-                    </div>
-                </div>
                 <nav className={`navbar navbar-expand-lg navbar-light header-navigation stricky ${ state ? 'stricked-menu stricky-fixed' : ''}`}>
                     <div className="container clearfix">
                         <div className="logo-box clearfix">
@@ -66,11 +72,16 @@ const NavThreeTry = () => {
                                          alt="pinata logo" />
                                 
                             </Link>
+                            
                             <button className="menu-toggler" data-target=".main-navigation">
                                 <span className="kipso-icon-menu"></span>
                             </button>
                         </div>
                         <div className="main-navigation">
+
+
+                        {!user && (
+                        <>
                             <ul className=" navigation-box">
                                 <li className="current">
                                     <Link href="/">Inicio</Link>
@@ -85,20 +96,93 @@ const NavThreeTry = () => {
                                     <Link to="/contact">Descargas</Link>
                                 </li>
                             </ul>
+                            </>
+                    )} 
+                            
+                            
+                    
+                        
+                      {user?.role ==="business" &&  (
+                        
+                            <ul className=" navigation-box">
+                                <li className="current">
+                                    <Link href="/">Inicio</Link>
+                                </li>
+                                <li>
+                                    <Link to="/assets">Contenido</Link>
+                                </li>
+                                
+                                <li>
+                                    <Link to="/contact">Tus promociones</Link>
+                                </li>
+                            </ul>
+                            
+                    )}
+
+                    {user?.role ==="user" && (
+                        <>
+                            <ul className=" navigation-box">
+                                <li className="current">
+                                    <Link href="/">Inicio</Link>
+                                </li>
+                                <li>
+                                    <Link to="/assets">Contenido</Link>
+                                </li>
+                                <li>
+                                    <Link to="/promociones">Promociones</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Descargas</Link>
+                                </li>
+                            </ul>
+                            </>
+                    )}   
+                    {user?.role ==="creator" && (
+                        <>
+                            <ul className=" navigation-box">
+                                <li className="current">
+                                    <Link href="/">Inicio</Link>
+                                </li>
+                                <li>
+                                    <Link to="/assets">Tu Contenido</Link>
+                                </li>
+                                <li>
+                                    <Link to="/promociones">Promociones</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Contiendas</Link>
+                                </li>
+                            </ul>
+                            </>
+                    )} 
                         </div>
                         <div className="right-side-box">
                             <div className="header__social">
-                                <Link to="#"><i className="fas fa-camera"></i></Link>
-                                <Link to="#"><i className="fas fa-video"></i></Link>
-                                <Link to="#"><i className="fas fa-file-audio"></i></Link>
-                                <Link to="#"><i className="fas fa-bezier-curve"></i></Link>
+                            {!user && (
+                        <>
+                        
+                                
+                                <Link to="/login"><i className="fas fa-sign-in-alt"></i></Link>
+                                <Link to="/signup"><i className="fas fa-user-plus"></i></Link>
+                        </>
+                    )}
+                     {user && (
+                        <>
+                                <Link to="/negocio"><i className="fas fa-store"></i></Link>
+                                <Link to="/creador"><i className="fas fa-camera-retro"></i></Link>
+                                <a  onClick={logoutProcess} ><i className="fas fa-sign-out-alt"></i></a>
+                                
+                        </>
+                    )}
+                              
                             </div>
                         </div>
                     </div>
                 </nav>
             </header>
-        );
+        )
     }
+
 
 
 export default NavThreeTry;

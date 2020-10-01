@@ -11,7 +11,8 @@ export const getPromos = async () => {
   return await service.get("/")
 }
 export const getPromo = async promoId => {
-  return await service.get(`/${promoId}`)
+  const {data: promos} =await service.get(`/${promoId}`)
+  return promos
 }
 
 export const createPromo = async PromoInfo => {

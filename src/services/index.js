@@ -17,6 +17,15 @@ export const signup = async user => {
 export const login = async user => {
   return await service.post("/login", user)
 }
+export const updateUserCreative = async (userId, userData) => {
+  const { data: user }= await service.post(`/profile/creator/${userId}`, userData)
+  return user
+}
+export const updateUserNegocio = async (userId, userData) => {
+  const { data: user }= await service.post(`/profile/business/${userId}`, userData)
+  return user
+}
+
 export const logOut = async () => {
   return await service.get("/logout")
 }

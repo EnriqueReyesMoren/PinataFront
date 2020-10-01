@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
-import NavThree from "../components/NavThree";
+import NavThreeTry from "../components/NavThreeTry";
 import PageHeader from "../components/PageHeader";
 import Footer from "../components/Footer";
 import Assets from "../components/Assets";
@@ -8,7 +8,7 @@ import Assets from "../components/Assets";
 const AssetsPage = () => {
     return (
         <Layout pageTitle="Contenido | Descubre">
-            <NavThree />
+            <NavThreeTry />
             <PageHeader title="Contenido" />
             <Assets />
             <Footer />
